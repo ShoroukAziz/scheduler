@@ -29,3 +29,21 @@ export function getInterview(state, interview) {
   return interviewData;
 
 }
+
+export function getInterviewersForDay(state, day) {
+
+  const filteredDay = state.days.find(e => e.name === day);
+  if (!filteredDay) {
+    return [];
+  }
+  const interviewersIdsForDay = filteredDay.interviewers;
+
+  if (!interviewersIdsForDay) {
+    return []
+  }
+  const interviewersForDay = Object.values(state.interviewers).filter(interviewer => {
+    return interviewersIdsForDay.includes(interviewer.id)
+  });
+  return interviewersForDay;
+
+}
