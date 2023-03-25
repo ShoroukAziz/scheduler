@@ -1,8 +1,8 @@
 import React from 'react'
 import "./styles.scss";
-import Empty from "./Empty";
-import Show from "./Show";
-import Header from "./Header";
+import Empty from "./Empty.jsx";
+import Show from "./Show.jsx";
+import Header from "./Header.jsx";
 
 export default function Appointment(props) {
 
