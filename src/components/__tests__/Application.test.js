@@ -5,10 +5,11 @@ import {
   waitForElement,
   fireEvent,
   getByText,
-  prettyDOM,
   getAllByTestId,
   getByAltText,
   getByPlaceholderText,
+  waitForElementToBeRemoved,
+  queryByText,
 } from '@testing-library/react';
 
 import Application from 'components/Application';
@@ -26,15 +27,30 @@ describe('Application', () => {
 
   it('loads data, books an interview and reduces the spots remaining for Monday by 1', async () => {
     const { container } = render(<Application />);
+
     await waitForElement(() => getByText(container, 'Archie Cohen'));
 
     const appointment = getAllByTestId(container, 'appointment')[0];
 
     fireEvent.click(getByAltText(appointment, 'Add'));
+
     fireEvent.change(getByPlaceholderText(appointment, 'Enter Student Name'), {
       target: { value: 'Lydia Miller-Jones' },
     });
+
     fireEvent.click(getByAltText(appointment, 'Sylvia Palmer'));
+
     fireEvent.click(getByText(appointment, 'Save'));
+
+    expect(getByText(appointment, 'Saving...')).toBeInTheDocument();
+
+    await waitForElementToBeRemoved(() => getByText(appointment, 'Saving...'));
+
+    expect(getByText(appointment, 'Lydia Miller-Jones')).toBeInTheDocument();
+
+    const day = getAllByTestId(container, 'day').find((day) =>
+      queryByText(day, 'Monday')
+    );
+    expect(getByText(day, 'no spots remaining')).toBeInTheDocument();
   });
 });
