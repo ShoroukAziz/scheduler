@@ -6,4 +6,8 @@ import Appointment from 'components/Appointment';
 
 afterEach(cleanup);
 
-describe('Appointment', () => {});
+describe('Appointment', () => {
+  xit('renders without crashing', () => {
+    render(<Appointment />);
+  });
+});
