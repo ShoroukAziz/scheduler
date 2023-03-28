@@ -44,7 +44,7 @@ export default function Form(props) {
           </Button>
           <Button
             onClick={() => {
-              props.onSave(student, interviewer);
+              props.onSave(student, interviewer, props.update);
             }}
             confirm>
             Save
