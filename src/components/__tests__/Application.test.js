@@ -147,7 +147,7 @@ describe('Application', () => {
 
     fireEvent.click(getByAltText(appointment, 'Close'));
 
-    expect(getByAltText(appointment, 'Add')).toBeInTheDocument();
+    expect(getByText(appointment, 'Save')).toBeInTheDocument();
   });
 
   it('shows the delete error when failing to save an appointment', async () => {
