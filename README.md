@@ -31,6 +31,8 @@
     - [Start Scheduling 🎉📅⌚](#start-scheduling-)
   - [Product Overview](#product-overview)
   - [](#)
+  - [Dependencies](#dependencies)
+    - [Development Dependencies](#development-dependencies)
   - [⚠️ Disclaimer](#️-disclaimer)
 
 ---
@@ -105,6 +107,30 @@ npm run cypress
 <img src='https://github.com/ShoroukAziz/scheduler/blob/master/docs/edit.PNG?raw=true' />
 <img src='https://github.com/ShoroukAziz/scheduler/blob/master/docs/confirm.PNG?raw=true' />
 ---
+
+## Dependencies
+
+- axios
+- classnames"
+- normalize.css
+- react
+- react-dom
+- react-scripts
+
+### Development Dependencies
+
+- devDependencies
+- @storybook/addon-actions
+- @storybook/addon-backgrounds
+- @storybook/addon-links
+- @storybook/addons
+- @storybook/react
+- @testing-library/jest-dom
+- @testing-library/react
+- @testing-library/react-hook
+- babel-loaderprop-type
+- sass
+- react-test-renderer
 
 ## ⚠️ Disclaimer
 
