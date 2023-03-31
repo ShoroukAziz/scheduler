@@ -1,3 +1,10 @@
+/**
+ * Gets a list of booked appointments for a specific day
+ *
+ * @param  {object} state The state object
+ * @param  {string} day   the day we want to get appointments for
+ * @return {array}        a list of appointments for that day or an empty array if no appointments were found
+ */
 export function getAppointmentsForDay(state, day) {
   const filteredDay = state.days.find((e) => e.name === day);
   if (!filteredDay) {
@@ -17,6 +24,13 @@ export function getAppointmentsForDay(state, day) {
   return appointmentsForDay;
 }
 
+/**
+ * Gets a full interview object containing the interviewer data and not just the id
+ *
+ * @param  {object} state       The state object
+ * @param  {object} interview   the interview we want to add interviewer data to
+ * @return {object}             the complete interview data object
+ */
 export function getInterview(state, interview) {
   if (!interview) {
     return null;
@@ -28,6 +42,13 @@ export function getInterview(state, interview) {
   return interviewData;
 }
 
+/**
+ * Gets a list of available interviewers for a specific day
+ *
+ * @param  {object} state The state object
+ * @param  {string} day   the day we want to get appointments for
+ * @return {array}        a list of available interviewers for that day or an empty array if no  interviewers were found
+ */
 export function getInterviewersForDay(state, day) {
   const filteredDay = state.days.find((e) => e.name === day);
   if (!filteredDay) {
